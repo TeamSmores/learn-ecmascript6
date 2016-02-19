@@ -8,7 +8,6 @@ export default class App extends Component {
   render() {
     return (
       <div id='App'>
-        App
         <Header />
         <Footer />
         <ES5Editor />
@@ -16,5 +15,22 @@ export default class App extends Component {
     )
   }
 }
+//Equivalent from tic-tac-toe:
+// var App = React.createClass({
+//   render: function() {
+    
+//     return (
+//       <div className="container">
+//         <h1>Tic Tac Toe</h1>
+//         <Board />
+     
+//       </div>
+//     );
+//   }
+// });
+
 
 render(<App />, document.getElementById('main-container'));
+// Equivalent from tic-tac-toe:
+// ReactDOM.render(<App />, document.getElementById('content'));
+
