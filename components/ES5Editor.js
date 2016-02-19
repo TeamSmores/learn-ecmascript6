@@ -8,13 +8,17 @@ export default class ES5Editor extends Component {
   constructor(props) {
   	super(props); // I'm not sure exactly what this does or even if this is necessary. It looks like this.props is undefined unless passed to super: http://stackoverflow.com/questions/30571875/whats-the-difference-between-super-and-superprops-in-react-when-using-e
   	// This article may be useful: http://www.jackcallister.com/2015/08/30/the-react-quick-start-guide-es6-edition.html
-  	this.state = {es5code: props.initialEs5code};
+  	this.state = {
+  		greeting: props.initialGreeting,
+  		es5code: props.initialEs5code
+  	};
   }
 
   render() {
     return (
       <div id='ES5Editor'>
         <form>
+        	<p>{this.state.greeting}</p>
         	<textarea
         		name='es5code'
         		value={this.state.es5code}
@@ -23,7 +27,7 @@ export default class ES5Editor extends Component {
       		</textarea>
         	<input type='submit' value='Translate' />
         </form>
-        <ES6 es5code={this.state.es5code} />
+        <ES6 es5code={this.state.es5code} greeting={this.state.greeting}/>
         <ToolTips es5code={this.state.es5code} />
       </div>
     );
@@ -34,7 +38,10 @@ export default class ES5Editor extends Component {
   }
 }
 
-ES5Editor.defaultProps = {initialEs5code: 'Enter your ES5 code here'};
+ES5Editor.defaultProps = {
+	initialGreeting: 'Howdy!',
+	initialEs5code: 'Enter your ES5 code here'
+};
 
 // Try using a submit input and then a submit button to grab the text in the textarea. We may need to save that text on change.
 
