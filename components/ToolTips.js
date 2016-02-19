@@ -5,7 +5,7 @@ export default class ToolTips extends Component {
   render() {
     return (
       <div id='ToolTips'>
-        ToolTips
+        The code currently in the textarea is {this.props.es5code}
       </div>
     )
   }
