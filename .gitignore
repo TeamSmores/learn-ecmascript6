@@ -1,1 +1,5 @@
 node_modules
+build/
+.DS_Store
+components/.DS_Store
+server/.DS_Store

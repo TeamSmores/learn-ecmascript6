@@ -21,6 +21,24 @@ export default class ES5Editor extends Component {
   	};
   }
 
+  handleChange(event) {
+  	this.setState({es5code: event.target.value});
+  }
+
+  // This function updates this.state.es6code and this.state.helpText when you click the button.
+  handleClick(event) {
+
+  	event.preventDefault();
+
+  	this.setState({
+  		es6code: translate(this.state.es5code), // Change this to a post request.
+  		// We should probably do the translation on the server side to protect the server and minimize the amount of data the user must load. Susan is checking.
+
+  		// For now, I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
+  		feature: generateHelpText('arrow function')
+  	});
+  }
+
   render() {
     return (
       <div id='ES5Editor'>
@@ -37,23 +55,6 @@ export default class ES5Editor extends Component {
         <ToolTips feature={this.state.feature} />
       </div>
     );
-  }
-
-  handleChange(event) {
-  	this.setState({es5code: event.target.value});
-  }
-
-  // This function updates this.state.es6code and this.state.helpText when you click the button.
-  handleClick(event) {
-
-  	event.preventDefault();
-
-  	this.setState({
-  		es6code: translate(this.state.es5code),
-
-  		// For now, I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
-  		feature: generateHelpText('arrow function')
-  	});
   }
 }
 
