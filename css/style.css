@@ -12,35 +12,35 @@ body div div{
 
 #Header {
   width: 815px;
-  height: 67px;
+  height: 71px;
   top: 0px;
   left: 7px;
 }
 
 #Footer {
   width: 815px;
-  height: 67px;
+  height: 71px;
   top: 469px;
   left: 7px;
 }
 
 #ES5Editor {
-  width: 704px;
-  height: 376px;
-  top: 79px;
-  left: 62px;
+  width: 815px;
+  height: 323px;
+  top: 102px;
+  left: 7px;
 }
 
 #ES6 {
-  width: 326px;
-  height: 215px;
-  top: 6px;
-  left: 361px;
+  width: 410px;
+  height: 172px;
+  top: 7px;
+  left: 381px;
 }
 
 #ToolTips {
-  width: 324px;
-  height: 128px;
-  top: 235px;
-  left: 363px;
+  width: 408px;
+  height: 114px;
+  top: 195px;
+  left: 384px;
 }
