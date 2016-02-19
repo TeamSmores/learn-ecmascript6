@@ -1,0 +1,46 @@
+
+body div div{
+  border: 1px solid black;
+  position: absolute;
+}
+
+#App {
+  position: relative;
+  width: 833px;
+  height: 544px;
+}
+
+#Header {
+  width: 815px;
+  height: 67px;
+  top: 0px;
+  left: 7px;
+}
+
+#Footer {
+  width: 815px;
+  height: 67px;
+  top: 469px;
+  left: 7px;
+}
+
+#ES5Editor {
+  width: 704px;
+  height: 376px;
+  top: 79px;
+  left: 62px;
+}
+
+#ES6 {
+  width: 326px;
+  height: 215px;
+  top: 6px;
+  left: 361px;
+}
+
+#ToolTips {
+  width: 324px;
+  height: 128px;
+  top: 235px;
+  left: 363px;
+}
