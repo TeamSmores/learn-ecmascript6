@@ -5,11 +5,28 @@ export default class ES6 extends Component {
   render() {
     return (
       <div id='ES6'>
-      <p>{this.props.greeting}</p>
-      <p>The code currently in the textarea is {this.props.es5code}</p>
+
+	      <p>
+	      	<strong>
+	      	Your ES5 code (this is just to show that we are successfully updating the state and passing down props):
+	      	</strong>
+      	</p>
+
+      	<p>
+	      	{this.props.es5code}
+      	</p>
+
+      	<p>
+	      	<strong>
+	      	ES6 translation:
+	      	</strong>
+      	</p>
+	      	
+	      <p>
+	      	{this.props.es6code}
+      	</p>
+
       </div>
     )
   }
 }
-
-
