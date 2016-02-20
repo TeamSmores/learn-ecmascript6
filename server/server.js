@@ -3,7 +3,7 @@ var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
 
-// I had trouble using import syntax here:
+// ID: I had trouble using import syntax here:
 var translateController = require('./translateController');
 
 // There is probably a better name for this file - helpController?
@@ -16,11 +16,13 @@ app.get('/', function(req,res) {
   res.sendFile('/index.html');
 });
 
+// Route for when a user clicks the 'translate' button.
 app.post('/translate', function(req, res) {
 
 	// ID: I'm using bodyParser to parse req.body.
 	var translationResult = translateController.translate(req.body.es5code);
 
+	// If translation succeeds, send the translationResult, along with an object holding help text about ES6 features.
 	if (translationResult) {
 
 			res.send({
@@ -30,6 +32,7 @@ app.post('/translate', function(req, res) {
 				features: helpController.helpText
 			});
 
+	// If translation fails, send an error message, along with an empty object (so that no help text about ES6 features will be displayed).
 	} else {
 
 		res.send({
