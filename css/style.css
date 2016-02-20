@@ -1,46 +1,55 @@
 
 body div div{
-  border: 1px solid black;
-  position: absolute;
+	/*position: absolute;*/
+}
+
+#react-cm {
+	border: 1px solid black;
 }
 
 #App {
-  position: relative;
-  width: 833px;
-  height: 544px;
+	border: 1px solid black;
+	position: relative;
+	width: 833px;
+	height: 544px;
 }
 
 #Header {
-  width: 815px;
-  height: 71px;
-  top: 0px;
-  left: 7px;
+	border: 1px solid black;
+	width: 815px;
+	height: 71px;
+	top: 0px;
+	left: 7px;
 }
 
 #Footer {
-  width: 815px;
-  height: 71px;
-  top: 469px;
-  left: 7px;
+	border: 1px solid black;
+	width: 815px;
+	height: 71px;
+	top: 469px;
+	left: 7px;
 }
 
 #ES5Editor {
-  width: 815px;
-  height: 323px;
-  top: 102px;
-  left: 7px;
+	border: 1px solid black;
+	width: 815px;
+	height: 323px;
+	top: 102px;
+	left: 7px;
 }
 
 #ES6 {
-  width: 410px;
-  height: 172px;
-  top: 7px;
-  left: 381px;
+	border: 1px solid black;
+	width: 410px;
+	height: 172px;
+	top: 7px;
+	left: 381px;
 }
 
 #ToolTips {
-  width: 408px;
-  height: 114px;
-  top: 195px;
-  left: 384px;
+	border: 1px solid black;
+	width: 408px;
+	height: 114px;
+	top: 195px;
+	left: 384px;
 }
