@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import ES5Editor from './ES5Editor';
 
+
 export default class App extends Component {
 	render() {
 		return (
@@ -16,6 +17,5 @@ export default class App extends Component {
 		)
 	}
 }
-
 
 render(<App />, document.getElementById('main-container'));
