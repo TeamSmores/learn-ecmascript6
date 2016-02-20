@@ -22,6 +22,7 @@ export default class ES5Editor extends Component {
 			es6code: props.initialEs6code,
 			feature: props.initialFeature
 		};
+		// this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleChange(event) {
@@ -34,25 +35,37 @@ export default class ES5Editor extends Component {
 		event.preventDefault();
 
 		this.setState({
-			es6code: translate(this.state.es5code), // Change this to a post request.
+			// es6code: translate(this.state.es5code), // Change this to a post request.
 			// We should probably do the translation on the server side to protect the server and minimize the amount of data the user must load. Susan is checking.
-
+			// Take me out after demo (below)
+			es6code: `array.forEach((element) => { \n  console.log(element * 2);\n}`,
 			// For now, I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
 			feature: generateHelpText('arrow function')
 		});
 	}
 
 	render() {
+		// console.log('state in render', this.state.es5code);
 		var options = {
 			lineNumbers: true,
 			mode: 'javascript'
 		};
 		return (
-			<div id='ES5Editor'>
-					<div id='react-cm'>
-					<Codemirror value={this.state.es5code} onChange={this.handleChange} options={options} />
+			<div id='state-container'>
+					<div id='editor-containers'>
+						<div id='es5-editor'>
+							<p>
+								<strong>
+								ES5 CODE:
+								</strong>
+							</p>
+							<form>
+								<Codemirror value={this.state.es5code} onChange={this.handleChange.bind(this)} options={options} />
+								<button onClick={this.handleClick.bind(this)}>Translate</button>
+							</form>
+						</div>
+					<ES6 es5code={this.state.es5code} es6code={this.state.es6code} />
 					</div>
-				<ES6 es5code={this.state.es5code} es6code={this.state.es6code} />
 				<ToolTips feature={this.state.feature} />
 			</div>
 		);
@@ -62,7 +75,7 @@ export default class ES5Editor extends Component {
 
 ES5Editor.defaultProps = {
 	initialEs5code: 'Enter your ES5 code here',
-	initialEs6code: 'When you click the button, your translated code will appear here...',
+	initialEs6code: 'Your code will display in ES6 here',
 
 	initialFeature: {
 		name: '',
