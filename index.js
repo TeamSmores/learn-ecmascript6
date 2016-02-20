@@ -1,3 +1,4 @@
+// What is this file?
 var esprima = require('esprima')
 var fs = require('fs');
 var es6codegen = require('es6codegen');
