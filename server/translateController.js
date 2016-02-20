@@ -1,6 +1,6 @@
-var esprima = require('esprima')
+var esprima = require('esprima') // Esprima translates code into an AST (abstract syntax tree).
 var fs = require('fs');
-var es6codegen = require('es6codegen'); // Substituted Alan and Wade's escodegen.js for the escodegen npm module
+var es6codegen = require('es6codegen'); // Escodegen translates an AST into JavaScript. Alan and Wade forked escodegen on github and modified it so that it translates into certain ES6 features. Here we're requiring Alan and Wade's version of escodegen, not the standatd version from npm.
 
 var translateController = {};
 
