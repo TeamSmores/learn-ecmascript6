@@ -24,7 +24,7 @@ app.post('/translate', function(req, res) {
 		es6code: translateController.translate(req.body.es5code),
 
 		// I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
-		feature: helpController.generateHelpText('for... of statement')
+		features: helpController.generateHelpText('for... of statement')
 	});
 
 })

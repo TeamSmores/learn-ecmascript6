@@ -2,9 +2,9 @@ var helpController = {};
 
 
 
-helpController.generateHelpText = function(feature) {
+helpController.generateHelpText = function(features) {
 
-	switch (feature) {
+	switch (features) {
 
 		case 'arrow function':
 			return {
@@ -34,6 +34,3 @@ helpController.generateHelpText = function(feature) {
 }
 
 module.exports = helpController;
-
-
-

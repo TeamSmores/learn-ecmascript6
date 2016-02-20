@@ -5,20 +5,20 @@ export default class ToolTips extends Component {
   render() {
     return (
       <div id='ToolTips'>
-      	<p>
-      		<strong>
-      			{this.props.feature.name}
-      		</strong>
-      			{this.props.feature.summary}
-    			<a href={this.props.feature.url}>
-    				{this.props.feature.linkText}
-  				</a>
-      	</p>
+        {this.props.features}
       </div>
     )
   }
 }
 
-/*
-
+/* old code
+        <p>
+          <strong>
+            {this.props.features.name}
+          </strong>
+            {this.props.features.summary}
+          <a href={this.props.features.url}>
+            {this.props.features.linkText}
+          </a>
+        </p>
 */

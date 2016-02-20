@@ -12,7 +12,7 @@ export default class ES5Editor extends Component {
   	this.state = {
   		es5code: props.initialEs5code,
   		es6code: props.initialEs6code,
-  		feature: props.initialFeature
+  		features: props.initialFeatures
   	};
   }
 
@@ -29,7 +29,7 @@ export default class ES5Editor extends Component {
 
   		this.setState({
   			es6code: data.es6code,
-  			feature: data.feature
+  			features: data.features
   		});
 
   	});
@@ -48,7 +48,7 @@ export default class ES5Editor extends Component {
         	<button onClick={this.handleClick.bind(this)}>Translate</button>
         </form>
         <ES6 es5code={this.state.es5code} es6code={this.state.es6code} />
-        <ToolTips feature={this.state.feature} />
+        <ToolTips features={this.state.features} />
       </div>
     );
   }
@@ -59,12 +59,7 @@ ES5Editor.defaultProps = {
 	initialEs5code: 'Enter your ES5 code here',
 	initialEs6code: 'When you click the button, your translated code will appear here...',
 
-	initialFeature: {
-		name: '',
-		summary: '...and help text will appear here.',
-		url: '',
-		linkText: '',
-	}
+	initialFeatures: [<p key='initial'>...and help text will appear here.</p>]
 };
 
 // Useful link for form: https://facebook.github.io/react/docs/forms.html
