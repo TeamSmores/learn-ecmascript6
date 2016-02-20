@@ -6,9 +6,9 @@ import Codemirror from 'react-codemirror';
 require('./../node_modules/codemirror/mode/javascript/javascript.js');
 
 export default class ES5Editor extends Component {
-	// I'm basing this code on https://facebook.github.io/react/docs/reusable-components.html
+	// I'm basing this code on https://facebook.github.io/react/docs/reusable-components.html#es6-classes
 	constructor(props) {
-		super(props); // I'm not sure exactly what this does or even if this is necessary. It looks like this.props is undefined unless passed to super: http://stackoverflow.com/questions/30571875/whats-the-difference-between-super-and-superprops-in-react-when-using-e
+		super(props); // this.props is undefined unless it's passed to super: http://stackoverflow.com/questions/30571875/whats-the-difference-between-super-and-superprops-in-react-when-using-e
 		// This article may be useful: http://www.jackcallister.com/2015/08/30/the-react-quick-start-guide-es6-edition.html
 		this.state = {
 			es5code: props.initialEs5code,
