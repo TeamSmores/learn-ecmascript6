@@ -1,4 +1,8 @@
-function generateHelpText(feature) {
+var helpController = {};
+
+
+
+helpController.generateHelpText = function(feature) {
 
 	switch (feature) {
 
@@ -29,7 +33,7 @@ function generateHelpText(feature) {
 		}
 }
 
-module.exports = generateHelpText;
+module.exports = helpController;
 
 
 
