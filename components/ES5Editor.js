@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 import ES6 from './ES6';
 import ToolTips from './ToolTips';
-
-// translate.js is a placeholder for the function Alan and Wade are writing.
-import translate from './../server/translate';
-
-// help.js is also a placeholder.
-import generateHelpText from './../server/help';
 
 export default class ES5Editor extends Component {
   // I'm basing this code on https://facebook.github.io/react/docs/reusable-components.html
@@ -17,7 +12,7 @@ export default class ES5Editor extends Component {
   	this.state = {
   		es5code: props.initialEs5code,
   		es6code: props.initialEs6code,
-  		feature: props.initialFeature
+  		features: props.initialFeatures
   	};
   }
 
@@ -25,17 +20,19 @@ export default class ES5Editor extends Component {
   	this.setState({es5code: event.target.value});
   }
 
-  // This function updates this.state.es6code and this.state.helpText when you click the button.
+  // This function updates this.state.es6code and this.state.feature when you click the button.
   handleClick(event) {
 
   	event.preventDefault();
 
-  	this.setState({
-  		es6code: translate(this.state.es5code), // Change this to a post request.
-  		// We should probably do the translation on the server side to protect the server and minimize the amount of data the user must load. Susan is checking.
+  	// Might be able to address failures here.
+  	$.post('/translate', {es5code: this.state.es5code}, data => {
 
-  		// For now, I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
-  		feature: generateHelpText('arrow function')
+  		this.setState({
+  			es6code: data.es6code,
+  			features: data.features
+  		});
+
   	});
   }
 
@@ -52,7 +49,7 @@ export default class ES5Editor extends Component {
         	<button onClick={this.handleClick.bind(this)}>Translate</button>
         </form>
         <ES6 es5code={this.state.es5code} es6code={this.state.es6code} />
-        <ToolTips feature={this.state.feature} />
+        <ToolTips features={this.state.features} />
       </div>
     );
   }
@@ -63,14 +60,12 @@ ES5Editor.defaultProps = {
 	initialEs5code: 'Enter your ES5 code here',
 	initialEs6code: 'When you click the button, your translated code will appear here...',
 
-	initialFeature: {
+	initialFeatures: [{
 		name: '',
 		summary: '...and help text will appear here.',
 		url: '',
-		linkText: '',
-	}
+		linkText: ''
+	}]
 };
 
-/* Useful links:
-https://facebook.github.io/react/docs/forms.html
-*/
+// Useful link for form: https://facebook.github.io/react/docs/forms.html

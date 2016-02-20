@@ -3,18 +3,39 @@ import React, {Component} from 'react';
 
 export default class ToolTips extends Component {
   render() {
+
+    var articles = [];
+
+    for (var i = 0; i < this.props.features.length; i ++) {
+      articles.push(
+        <p key={i}>
+          <strong>
+            {this.props.features[i].name}
+          </strong>
+            {this.props.features[i].summary}
+          <a href={this.props.features[i].url}>
+            {this.props.features[i].linkText}
+          </a>
+        </p>
+        );
+    }
+
     return (
       <div id='ToolTips'>
-      	<p>
-      		<strong>
-      			{this.props.feature.name}
-      		</strong>
-      			{this.props.feature.summary}
-    			<a href={this.props.feature.url}>
-    				{this.props.feature.linkText}
-  				</a>
-      	</p>
+        {articles}
       </div>
     )
   }
 }
+
+/* old code
+        <p>
+          <strong>
+            {this.props.features[0].name}
+          </strong>
+            {this.props.features[0].summary}
+          <a href={this.props.features[0].url}>
+            {this.props.features[0].linkText}
+          </a>
+        </p>
+*/
