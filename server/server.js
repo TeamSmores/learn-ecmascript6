@@ -24,7 +24,7 @@ app.post('/translate', function(req, res) {
 		es6code: translateController.translate(req.body.es5code),
 
 		// Right now, I'm showing help text for all ES6 features we're translating. I'd love to figure out how to show help text for only the features that appear in the translated code.
-		features: helpController.generateHelpText()
+		features: helpController.helpText
 	});
 
 })
