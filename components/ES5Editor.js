@@ -25,6 +25,7 @@ export default class ES5Editor extends Component {
 
   	event.preventDefault();
 
+  	// Might be able to address failures here.
   	$.post('/translate', {es5code: this.state.es5code}, data => {
 
   		this.setState({
