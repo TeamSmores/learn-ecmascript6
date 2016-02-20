@@ -18,10 +18,8 @@ export default class ES6 extends Component {
 					ES6 Translation:
 					</strong>
 				</p>
-
-				<p>
+				
 				<Codemirror value={this.props.es6code} options={options} />
-				</p>
 
 			</div>
 		)

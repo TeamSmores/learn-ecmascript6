@@ -1,10 +1,11 @@
-/* * {
-	border: 1px dotted red; 
-} */
+* {
+/* 	border: 1px dotted red;  */
+}
+
 html, body {
-		margin: 0;
-		padding: 0;
-		font-family: 'Fira Mono'; 
+	margin: 0;
+	padding: 0;
+	font-family: 'Fira Mono';
 }
 
 a {
@@ -17,20 +18,17 @@ a {
 
 #editor-containers {
 /* 	border: 1px solid blue; */
-	height: 500;
+	height: 510;
 	width: 1100;
 	margin: 0 auto; 
 }
 
 #App {
-/* 	border: 1px solid ; */
 	position: relative;
-	/*width: 100;*/
-/* 	height: px; */
+	height: 100%;
 }
 
 #Header {
-	width: 100%;
 	height: 100px;
 	font-size: 50px;
 	background-color: #1D676A;
@@ -41,14 +39,13 @@ a {
 
 #Footer {
 	background-color: #173039;
-	width: 100%;
 	font-size: 18px;
 	height:40px;
-	top: 469px;
-	left: 7px;
 	color: white;
 	text-align: center;
-	padding-top: 25px;
+	width: 100%;
+	padding-top: 18px;
+
 }
 
 #es5-editor {
@@ -77,23 +74,20 @@ a {
 
 #helptext-container {
 /* 	border: 1px solid black; */
-	width: 1100px;
-	height: 114px;
-	margin: 0 auto;
-	
-}
+	width: 500px;
+	margin-left: 50%;padding: 20px 20px 20px 20px; 
+	display: flex;
+	flex-direction: column;
+	min-height:20px;}
 
 #helptext {
 	width: 500px;
-/* 	border: 1px solid black; */
-	float: right;
-	margin-right: 20px;
-	height: 100px;
+	padding: 10px;
+	margin-top: 10px;
 }
 
 button {
-	margin-top: 30px;
+	margin-top: 35px;
 	height: 40px;
 	width: 80px;
-/* 	background-color: white; */
 }

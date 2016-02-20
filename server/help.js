@@ -5,7 +5,7 @@ helpController.helpText = [
 
 	{
 		name: 'Arrow functions:',
-		summary: 'In ES6, you can write anonymous functions as arrow functions. Arrow syntax allows you to write shorter functions. It also sets the value of "this" within the arrow function to the context of the arrow function. ',
+		summary: ' In ES6, you can write anonymous functions as arrow functions. Arrow syntax allows you to write shorter functions. It also sets the value of "this" within the arrow function to the context of the arrow function. ',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
 		linkText: 'Learn more about arrow functions.'
 	},
