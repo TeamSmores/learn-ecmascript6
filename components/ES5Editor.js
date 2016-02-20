@@ -26,14 +26,20 @@ export default class ES5Editor extends Component {
 
 		event.preventDefault();
 
-		$.post('/translate', {es5code: this.state.es5code}, data => {
-
-					this.setState({
-						es6code: data.es6code,
-						features: data.features
-					});
-
+		$.post('/translate', {es5code: this.state.es5code})
+			.done( data => {
+				this.setState({
+					es6code: data.es6code,
+					features: data.features
 				});
+			})
+			// Displays error message if post request fails.
+			.fail( () => {
+				this.setState({
+					es6code: 'Uh-oh! Translation request failed.',
+					features: []
+				});
+			})
 	}
 
 	render() {

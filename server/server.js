@@ -33,7 +33,7 @@ app.post('/translate', function(req, res) {
 	} else {
 
 		res.send({
-			es6code: "Uh-oh! Esprima was unable to parse your ES5.\nPlease check your code for errors.",
+			es6code: 'Uh-oh! Esprima was unable to parse your ES5.\n\nPlease check your code for errors.',
 			features: []
 		})
 	}
