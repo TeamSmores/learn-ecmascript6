@@ -4,12 +4,6 @@ import $ from 'jquery';
 import ES6 from './ES6';
 import ToolTips from './ToolTips';
 
-// translate.js is a placeholder for the function Alan and Wade are writing.
-// import translate from './../server/translate';
-
-// help.js is also a placeholder.
-import generateHelpText from './../server/help';
-
 export default class ES5Editor extends Component {
   // I'm basing this code on https://facebook.github.io/react/docs/reusable-components.html
   constructor(props) {
@@ -26,34 +20,19 @@ export default class ES5Editor extends Component {
   	this.setState({es5code: event.target.value});
   }
 
-  // This function updates this.state.es6code and this.state.helpText when you click the button.
+  // This function updates this.state.es6code and this.state.feature when you click the button.
   handleClick(event) {
 
-  	// I confirmed that this function is running.
-  	// console.log('handling click');
-
-  	// I just switched these. Can I add a success function now?
   	event.preventDefault();
+
   	$.post('/translate', {es5code: this.state.es5code}, data => {
 
-  		// console.log("Success! Here's the data: ", data); // I console.logged to confirm that the data is what I want. It is! It's the translation. 
-
-  		// Will I see a render? No - I'm seeing "this.setState is not a function". I'll now try an arrow function.
-  		this.setState({es6code: data});
+  		this.setState({
+  			es6code: data.es6code,
+  			feature: data.feature
+  		});
 
   	});
-  	
-
-
-  	/*
-  	this.setState({
-  		es6code: translate(this.state.es5code), // Change this to a post request.
-  		// We should probably do the translation on the server side to protect the server and minimize the amount of data the user must load. Susan is checking.
-
-  		// For now, I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
-  		feature: generateHelpText('for... of statement')
-  	});
-		*/
   }
 
   render() {
@@ -88,9 +67,4 @@ ES5Editor.defaultProps = {
 	}
 };
 
-/* Useful links:
-https://facebook.github.io/react/docs/forms.html
-*/
-
-// Old
-// <form method='POST' action='/translate'>
+// Useful link for form: https://facebook.github.io/react/docs/forms.html

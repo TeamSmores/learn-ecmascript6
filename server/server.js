@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 // I had trouble using import syntax here:
 var fakeTranslate = require('./translateController');
 
+// There is probably a better name for this file - helpController?
+var generateHelpText = require('./help');
+
 app.use(express.static(path.join(__dirname, './../')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,24 +17,16 @@ app.get('/', function(req,res) {
 });
 
 app.post('/translate', function(req, res) {
-	// I've console logged to confirm that req.body.es5code is the code we want to translate and that I can translate it with the fakeTranslate function.
-	// console.log('es5code: ', req.body.es5code);
-	// console.log('fake translation: ', fakeTranslate(req.body.es5code));
-	// console.log('req:', req); // The body is now empty - weird. Do I need bodyParser?
 
-	// I want to send the translation of req.body.es5code:
-	res.send(fakeTranslate(req.body.es5code));
+	res.send({
 
-	// I've confirmed that this function is running.
-	// console.log('app.post is running')
-	
-	// res.redirect('/');
-	// Now setState
+		// Need to switch from the fake function to the real one :)
+		es6code: fakeTranslate(req.body.es5code),
 
-	// console.log('Will this show up? I want to know if I can do anything after res.redirect.') // Answer: yes.
-	// res.end(); // takes user to a blank page
-	// Do I need middleware?
-	// Can the last function be updating state?
+		// I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
+		feature: generateHelpText('for... of statement')
+	});
+
 })
 
 app.listen(3000, function() {
