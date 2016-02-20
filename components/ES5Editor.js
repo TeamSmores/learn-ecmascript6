@@ -19,7 +19,6 @@ export default class ES5Editor extends Component {
 
 	handleChange(event) {
 		this.setState({es5code: event});
-		// this.setState({es5code: event.target.value});
 	}
 
 	// This function updates this.state.es6code and this.state.features when you click the button.
@@ -27,14 +26,20 @@ export default class ES5Editor extends Component {
 
 		event.preventDefault();
 
-		$.post('/translate', {es5code: this.state.es5code}, data => {
-
-					this.setState({
-						es6code: data.es6code,
-						features: data.features
-					});
-
+		$.post('/translate', {es5code: this.state.es5code})
+			.done( data => {
+				this.setState({
+					es6code: data.es6code,
+					features: data.features
 				});
+			})
+			// Displays error message if post request fails.
+			.fail( () => {
+				this.setState({
+					es6code: 'Uh-oh! Translation request failed.',
+					features: []
+				});
+			})
 	}
 
 	render() {
@@ -65,7 +70,7 @@ export default class ES5Editor extends Component {
 		);
 	}
 }
-// ID: This link helped me with the next line: https://github.com/goatslacker/alt/issues/283
+// ID: This link helped me with binding handleClick: https://github.com/goatslacker/alt/issues/283
 
 
 ES5Editor.defaultProps = {
@@ -80,6 +85,4 @@ ES5Editor.defaultProps = {
 	}
 };
 
-/* Useful links:
-https://facebook.github.io/react/docs/forms.html
-*/
+// Useful link: https://facebook.github.io/react/docs/forms.html

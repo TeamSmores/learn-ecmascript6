@@ -25,12 +25,3 @@ export default class ES6 extends Component {
 		)
 	}
 }
-// <p>
-// <strong>
-// Your ES5 code (this is just to show that we are successfully updating the state and passing down props):
-// </strong>
-// </p>
-//
-// <p>
-// {this.props.es5code}
-// </p>
