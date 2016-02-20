@@ -23,8 +23,8 @@ app.post('/translate', function(req, res) {
 		// I'm using bodyParser to parse req.body.
 		es6code: translateController.translate(req.body.es5code),
 
-		// I've hard-coded the name of the feature that we've translated and would like to show help text about. Eventually, I'd like to figure out how to (1) update the feature name dynamically and (2) show help text for multiple features (one div per feature). Perhaps I could do that by making generateHelpText an array?
-		features: helpController.generateHelpText('for... of statement')
+		// Right now, I'm showing help text for all ES6 features we're translating. I'd love to figure out how to show help text for only the features that appear in the translated code.
+		features: helpController.generateHelpText()
 	});
 
 })

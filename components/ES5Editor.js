@@ -59,7 +59,12 @@ ES5Editor.defaultProps = {
 	initialEs5code: 'Enter your ES5 code here',
 	initialEs6code: 'When you click the button, your translated code will appear here...',
 
-	initialFeatures: [<p key='initial'>...and help text will appear here.</p>]
+	initialFeatures: [{
+		name: '',
+		summary: '...and help text will appear here.',
+		url: '',
+		linkText: ''
+	}]
 };
 
 // Useful link for form: https://facebook.github.io/react/docs/forms.html
