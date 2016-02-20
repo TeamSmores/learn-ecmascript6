@@ -2,17 +2,60 @@
 
 var esprima = require('esprima')
 var fs = require('fs');
-var es6codegen = require('es6codegen'); // Substitute Alan and Wade's escodegen.js for the escodegen npm module, and remove that module from the package.json.
+var es6codegen = require('es6codegen'); // Substituted Alan and Wade's escodegen.js for the escodegen npm module, and remove that module from the package.json.
 
 var translateController = {};
 
+// console.log(typeof es6codegen.generate(esprima.parse('var x = 5'))); // string
+/* For testing only
+console.log('begin');
+console.log(esprima.parse('var x = 5', {tolerant: true}));
+// Error seems to happen here
+console.log(esprima.parse('hi there', {tolerant: true}));
+console.log('end');
+*/
+
+/* For testing only
+Eventually wrap this in function
+
+var es5code = 'hey hey';
+
+
+var response;
+
+try {
+	var ast = esprima.parse(es5code);
+	response = es6codegen.generate(ast);
+}
+catch(e) {
+	console.log('error: ', e);
+	response = 'wah-wah';
+}
+finally {
+	console.log('response: ', response);
+}
+*/
+
 translateController.translate = function(es5code) {
 
-	// ***Need to figure out what to do if the input is invalid.
+	// ***Need to figure out what to do if the input is invalid. Could I use status codes?
 	// If es5code is invalid (for example: 'be nice'), I get error messages in the terminal ('Error: Line 1: Unexpected identifier') and console ('POST http://localhost:3000/translate 500 (Internal Server Error)'), and I can't console-log anything below the next line.
-	var ast = esprima.parse(es5code);
+	// var ast = esprima.parse(es5code);
+	// return es6codegen.generate(ast);
 
-	return es6codegen.generate(ast);
+	var response;
+
+	try {
+		var ast = esprima.parse(es5code);
+		response = es6codegen.generate(ast);
+	}
+	catch(e) {
+		response = 'Translation to AST failed';
+	}
+	finally {
+		return response;
+	}
+
 }
 
 /* Old code
@@ -34,6 +77,7 @@ console.log(output);
 
 */
 
+// ID: We used this function for testing only.
 translateController.fakeTranslate = function(code) {
 	return 'ARROW FUNCTION ' + code + ' ARROW FUNCTION';
 }
