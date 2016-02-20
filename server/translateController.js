@@ -50,7 +50,7 @@ translateController.translate = function(es5code) {
 		response = es6codegen.generate(ast);
 	}
 	catch(e) {
-		response = 'Translation to AST failed';
+		response = '';
 	}
 	finally {
 		return response;

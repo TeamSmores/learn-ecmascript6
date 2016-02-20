@@ -18,14 +18,25 @@ app.get('/', function(req,res) {
 
 app.post('/translate', function(req, res) {
 
-	res.send({
+	// ID: I'm using bodyParser to parse req.body.
+	var translationResult = translateController.translate(req.body.es5code);
 
-		// I'm using bodyParser to parse req.body.
-		es6code: translateController.translate(req.body.es5code),
+	if (translationResult) {
 
-		// Right now, I'm showing help text for all ES6 features we're translating. I'd love to figure out how to show help text for only the features that appear in the translated code.
-		features: helpController.helpText
-	});
+			res.send({
+				es6code: translationResult,
+
+				// ID: Right now, I'm showing help text for all ES6 features included in our app. I'd love to figure out how to show help text for only the features that appear in the translated code.
+				features: helpController.helpText
+			});
+
+	} else {
+
+		res.send({
+			es6code: "Uh-oh! Esprima was unable to parse your ES5.\nPlease check your code for errors.",
+			features: []
+		})
+	}
 
 })
 
