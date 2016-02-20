@@ -1,46 +1,99 @@
+/* * {
+	border: 1px dotted red; 
+} */
+html, body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Fira Mono'; 
+}
 
-body div div{
-  border: 1px solid black;
-  position: absolute;
+a {
+	color: #FF615D;
+}
+
+#state-container {
+/* 	border: 2px solid red; */
+}
+
+#editor-containers {
+/* 	border: 1px solid blue; */
+	height: 500;
+	width: 1100;
+	margin: 0 auto; 
 }
 
 #App {
-  position: relative;
-  width: 833px;
-  height: 544px;
+/* 	border: 1px solid ; */
+	position: relative;
+	/*width: 100;*/
+/* 	height: px; */
 }
 
 #Header {
-  width: 815px;
-  height: 71px;
-  top: 0px;
-  left: 7px;
+	width: 100%;
+	height: 100px;
+	font-size: 50px;
+	background-color: #1D676A;
+	color: white;
+	padding-top: 50px;
+	padding-left: 50px; 
 }
 
 #Footer {
-  width: 815px;
-  height: 71px;
-  top: 469px;
-  left: 7px;
+	background-color: #173039;
+	width: 100%;
+	font-size: 18px;
+	height:40px;
+	top: 469px;
+	left: 7px;
+	color: white;
+	text-align: center;
+	padding-top: 25px;
 }
 
-#ES5Editor {
-  width: 815px;
-  height: 323px;
-  top: 102px;
-  left: 7px;
+#es5-editor {
+	border: 1px solid #DDDDDD;
+	width: 500px;
+	height: 400px;
+	top: 50px;
+	float:left;
+	position: relative;
+	margin-left: 20px;
+	padding: 10px;
+	padding-bottom: 20px;
 }
 
-#ES6 {
-  width: 410px;
-  height: 172px;
-  top: 7px;
-  left: 381px;
+#es6-editor {
+	border: 1px solid #DDDDDD;
+	width: 500px;
+	height: 400px;
+	float: right;
+	top: 50px;
+	position: relative;
+	margin-right: 20px;
+	padding: 10px;
+	padding-bottom: 20px;
 }
 
-#ToolTips {
-  width: 408px;
-  height: 114px;
-  top: 195px;
-  left: 384px;
+#helptext-container {
+/* 	border: 1px solid black; */
+	width: 1100px;
+	height: 114px;
+	margin: 0 auto;
+	
+}
+
+#helptext {
+	width: 500px;
+/* 	border: 1px solid black; */
+	float: right;
+	margin-right: 20px;
+	height: 100px;
+}
+
+button {
+	margin-top: 30px;
+	height: 40px;
+	width: 80px;
+/* 	background-color: white; */
 }

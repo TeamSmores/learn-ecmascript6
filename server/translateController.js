@@ -2,7 +2,7 @@
 
 var esprima = require('esprima')
 var fs = require('fs');
-var es6codegen = require('escodegen'); // Substitute Alan and Wade's escodegen.js for the escodegen npm module, and remove that module from the package.json.
+var es6codegen = require('es6codegen'); // Substitute Alan and Wade's escodegen.js for the escodegen npm module, and remove that module from the package.json.
 
 var translateController = {};
 
