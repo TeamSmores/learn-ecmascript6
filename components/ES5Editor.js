@@ -28,9 +28,21 @@ export default class ES5Editor extends Component {
 
 		$.post('/translate', {es5code: this.state.es5code})
 			.done( data => {
+
+				// VERY basic and uneffective way of getting the relevant help text to appear.
+				// Please improve!
+				let code = this.state.es5code;
+				code = code.replace('\n', '').replace(/[^a-z0-9]/gi, ' ').split(' ');
+				let helpTips = [];
+
+				code.forEach((el) => {
+					if (el === 'function') helpTips.push(data.features[0]);
+					if (el === 'for') helpTips.push(data.features[1]);
+				});
+
 				this.setState({
 					es6code: data.es6code,
-					features: data.features
+					features: helpTips
 				});
 			})
 			// Displays error message if post request fails.
@@ -43,8 +55,8 @@ export default class ES5Editor extends Component {
 	}
 
 	render() {
-		// TW: This is for options in CodeMirror
-		var options = {
+		// Options are for Codemirror
+		const options = {
 			lineNumbers: true,
 			mode: 'javascript'
 		};
@@ -70,6 +82,7 @@ export default class ES5Editor extends Component {
 		);
 	}
 }
+
 // ID: This link helped me with binding handleClick: https://github.com/goatslacker/alt/issues/283
 
 
