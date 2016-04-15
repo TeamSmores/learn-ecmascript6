@@ -3,13 +3,13 @@
 }
 
 html, body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Fira Mono';
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Mono';
 }
 
 a {
-	color: #FF615D;
+  color: #FF615D;
 }
 
 #state-container {
@@ -18,76 +18,75 @@ a {
 
 #editor-containers {
 /* 	border: 1px solid blue; */
-	height: 510;
-	width: 1100;
-	margin: 0 auto;
+  height: 510;
+  width: 1100;
+  margin: 0 auto;
 }
 
 #App {
-	position: relative;
-	height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 #Header {
-	height: 100px;
-	font-size: 50px;
-	background-color: #1D676A;
-	color: white;
-	padding-top: 50px;
-	padding-left: 50px;
+  height: 100px;
+  font-size: 50px;
+  background-color: #1D676A;
+  color: white;
+  padding-top: 50px;
+  padding-left: 50px;
 }
 
 #Footer {
-	background-color: #173039;
-	font-size: 18px;
-	height:40px;
-	color: white;
-	text-align: center;
-	width: 100%;
-	padding-top: 18px;
-
+  background-color: #173039;
+  font-size: 18px;
+  height:40px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding-top: 18px;
 }
 
 #es5-editor {
-	border: 1px solid #DDDDDD;
-	width: 500px;
-	height: 400px;
-	top: 50px;
-	float:left;
-	position: relative;
-	margin-left: 20px;
-	padding: 10px;
-	padding-bottom: 20px;
+  border: 1px solid #DDDDDD;
+  width: 500px;
+  height: 400px;
+  top: 50px;
+  float:left;
+  position: relative;
+  margin-left: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
 #es6-editor {
-	border: 1px solid #DDDDDD;
-	width: 500px;
-	height: 400px;
-	float: right;
-	top: 50px;
-	position: relative;
-	margin-right: 20px;
-	padding: 10px;
-	padding-bottom: 20px;
+  border: 1px solid #DDDDDD;
+  width: 500px;
+  height: 400px;
+  float: right;
+  top: 50px;
+  position: relative;
+  margin-right: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
 #helptext-container {
 /* 	border: 1px solid black; */
-	width: 500px;
-	margin-left: 50%;padding: 20px 20px 20px 20px;
-	display: flex;
-	flex-direction: column;
-	min-height:20px;}
+  width: 500px;
+  margin-left: 50%;padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height:20px;}
 
 #helptext {
-	width: 500px;
-	padding: 10px;
-	margin-top: 10px;
+  width: 500px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 button {
-	margin-top: 10px;
-	height: 40px;
-	width: 80px;
+  margin-top: 10px;
+  height: 40px;
+  width: 80px;
 }
