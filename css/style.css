@@ -20,7 +20,7 @@ a {
 /* 	border: 1px solid blue; */
 	height: 510;
 	width: 1100;
-	margin: 0 auto; 
+	margin: 0 auto;
 }
 
 #App {
@@ -34,7 +34,7 @@ a {
 	background-color: #1D676A;
 	color: white;
 	padding-top: 50px;
-	padding-left: 50px; 
+	padding-left: 50px;
 }
 
 #Footer {
@@ -75,7 +75,7 @@ a {
 #helptext-container {
 /* 	border: 1px solid black; */
 	width: 500px;
-	margin-left: 50%;padding: 20px 20px 20px 20px; 
+	margin-left: 50%;padding: 20px 20px 20px 20px;
 	display: flex;
 	flex-direction: column;
 	min-height:20px;}
@@ -87,7 +87,7 @@ a {
 }
 
 button {
-	margin-top: 35px;
+	margin-top: 10px;
 	height: 40px;
 	width: 80px;
 }
