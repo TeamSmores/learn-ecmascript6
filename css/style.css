@@ -1,7 +1,3 @@
-* {
-/* 	border: 1px dotted red;  */
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -12,12 +8,7 @@ a {
   color: #FF615D;
 }
 
-#state-container {
-/* 	border: 2px solid red; */
-}
-
 #editor-containers {
-/* 	border: 1px solid blue; */
   height: 510;
   width: 1100;
   margin: 0 auto;
@@ -72,7 +63,6 @@ a {
 }
 
 #helptext-container {
-/* 	border: 1px solid black; */
   width: 500px;
   margin-left: 50%;padding: 20px 20px 20px 20px;
   display: flex;

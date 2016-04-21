@@ -1,7 +1,7 @@
 {
   "name": "ES5toES6",
   "version": "1.0.0",
-  "description": "Your awesome project!",
+  "description": "A web app that translates ES5 into ES6",
   "main": "bundle.js",
   "scripts": {
     "prestart": "npm run task",
