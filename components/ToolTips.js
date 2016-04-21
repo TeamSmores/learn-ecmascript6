@@ -1,29 +1,31 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class ToolTips extends Component {
+const ToolTips = (props) => {
+  const articles = [];
 
-  render() {
-
-    var articles = [];
-
-    for (var i = 0; i < this.props.features.length; i ++) {
-      articles.push(
-        <div id='helptext' key={i}>
-          <strong>
-            {this.props.features[i].name}
-          </strong>
-            {this.props.features[i].summary}
-          <a href={this.props.features[i].url}>
-            {this.props.features[i].linkText}
-          </a>
-        </div>
-        );
-    }
-
-    return (
-      <div id='helptext-container'>
-        {articles}
+  for (let i = 0; i < props.features.length; i ++) {
+    articles.push(
+      <div id="helptext" key={i}>
+        <strong>
+          {props.features[i].name}
+        </strong>
+          {props.features[i].summary}
+        <a href={props.features[i].url}>
+          {props.features[i].linkText}
+        </a>
       </div>
-    )
+    );
   }
-}
+
+  return (
+    <div id="helptext-container">
+      {articles}
+    </div>
+  );
+};
+
+ToolTips.propTypes = {
+  features: React.PropTypes.array,
+};
+
+export default ToolTips;
