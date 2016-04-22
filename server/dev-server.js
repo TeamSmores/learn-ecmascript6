@@ -1,12 +1,14 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./../webpack.dev.config');
+/* eslint-disable no-console */
+
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./../webpack.dev.config');
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  historyApiFallback: true
-}).listen(3000, 'localhost', function (err, result) {
+  historyApiFallback: true,
+}).listen(3000, 'localhost', (err) => {
   if (err) {
     console.log(err);
   }

@@ -1,28 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Codemirror from 'react-codemirror';
 require('./../node_modules/codemirror/mode/javascript/javascript.js');
 
-// Welcome to the ES6 Component, friend.
+const ES6 = (props) => (
+  <div id="ES6-editor">
+    <p>
+      <strong>
+      ES6 Translation:
+      </strong>
+    </p>
+    <Codemirror value={props.es6code} options={props.options} />
+  </div>
+);
 
-export default class ES6 extends Component {
-  render() {
-    var options = {
-      lineNumbers: true,
-      mode: 'javascript'
-    };
+ES6.propTypes = {
+  es6code: React.PropTypes.string,
+  options: React.PropTypes.object,
+};
 
-    return (
-      <div id='ES6-editor'>
-
-        <p>
-          <strong>
-          ES6 Translation:
-          </strong>
-        </p>
-
-        <Codemirror value={this.props.es6code} options={options} />
-
-      </div>
-    )
-  }
-}
+export default ES6;
