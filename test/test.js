@@ -1,9 +1,6 @@
 /* Write ideas for tests here
 
 Routes
-- main
- - get request succeeds
- - response is html
 - /translate
  - post request succeeds
  - response is an object wiht the correct properties
@@ -13,16 +10,17 @@ Routes
 */
 
 /* eslint-env mocha */
-/* eslint-disable prefer-arrow-callback, func-names, no-unused-expressions */
+/* eslint-disable prefer-arrow-callback, func-names, no-unused-expressions, no-var */
 /* eslint space-before-function-paren: ["error", "never"] */
 
 // Require modules
 const expect = require('chai').expect;
-const request = require('supertest');
+var request = require('supertest');
 
 // Require files to test
 const translateController = require('./../server/translateController');
 const app = require('./../server/server');
+request = request(app);
 
 describe('translateController', function() {
   it('should translate one-line anonymous functions into one-line arrow functions', function() {
@@ -63,5 +61,23 @@ describe('translateController', function() {
   it('should return an empty string if the ES5 code submitted is invalid', function() {
     const es5code = 'invalid code';
     expect(translateController.translate(es5code)).to.equal('');
+  });
+});
+
+describe('Routes', function() {
+  it('get request to main route should return html', function(done) {
+    request.get('/')
+      .expect('Content-Type', /html/)
+      .expect(200, done);
+  });
+
+  it('post request to /translate returns valid JSON object', function(done) {
+    request.post('/translate')
+      .expect('Content-Type', /json/)
+      .expect(function(res) {
+        if (!res.body.es6code) throw new Error('missing es6code key');
+        if (!res.body.features) throw new Error('missing features key');
+      })
+      .expect(200, done);
   });
 });
