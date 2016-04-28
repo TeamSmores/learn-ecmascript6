@@ -8,7 +8,8 @@
     "start": "nodemon server/server.js",
     "start-dev": "node server/dev-server.js",
     "lint": "eslint components",
-    "task": "webpack"
+    "task": "webpack",
+    "test": "mocha test/test.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,10 +21,13 @@
     ]
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^1.0.2",
     "eslint-plugin-react": "^5.0.1",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0",
     "watchify": "^3.2.2"
   },
   "dependencies": {
