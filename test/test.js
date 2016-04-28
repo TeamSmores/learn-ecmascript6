@@ -1,14 +1,3 @@
-/* Write ideas for tests here
-
-Routes
-- /translate
- - post request succeeds
- - response is an object wiht the correct properties
-
- Frontend
- - Page contains #main-container div
-*/
-
 /* eslint-env mocha */
 /* eslint-disable prefer-arrow-callback, func-names, no-unused-expressions, no-var */
 /* eslint space-before-function-paren: ["error", "never"] */
